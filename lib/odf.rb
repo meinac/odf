@@ -47,7 +47,7 @@ module Odf
   DEFAULT_STYLE = "#{TEMPLATE_PATH}/default_style.xml".freeze
 
   def self.configure(&block)
-    block.call
+    block.call(self)
   end
 
   def self.styles=(val)
@@ -60,6 +60,10 @@ module Odf
 
   def self.creator
     @creator
+  end
+
+  def self.creator=(val)
+    @creator = val
   end
 
 end
